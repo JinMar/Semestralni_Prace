@@ -54,4 +54,11 @@ public class ImageDAO {
         }
 
     }
+    @Transactional
+    public int getCountImages() {
+
+        List<Images> myList = sessionFactory.getCurrentSession().createQuery("from Images" ).list();
+        return myList.size();
+
+    }
 }

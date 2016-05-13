@@ -200,5 +200,10 @@ public class MyRepository {
         }
         return true;
     }
-
+    public int getCountImages(){
+        return imageDAO.getCountImages();
+    }
+    public Images getImageByID(int id){
+        return imageDAO.getImages(id);
+    }
 }

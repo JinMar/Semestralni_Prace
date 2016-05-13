@@ -32,7 +32,7 @@
                     <h2>Vítejte na stránkách semestrální práce z pøedmìtu Pokroèilé programování na platformì Java</h2>
                 </header>
                 <div class="galery">
-                    <img class="def" src=${logo} alt="" />
+                    <img class="def" src=${url} alt="" />
                     <div class="left-but">
                     <form:form method="GET"  action="/previous/id=${previous}">
                         <input type="submit"  value="PØEDCHOZÍ"/>
