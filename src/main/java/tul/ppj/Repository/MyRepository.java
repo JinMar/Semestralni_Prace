@@ -29,6 +29,62 @@ public class MyRepository {
     @Autowired
     LikesCommentDAO likesCommentDAO;
 
+    public AutorDAO getAutorDAO() {
+        return autorDAO;
+    }
+
+    public void setAutorDAO(AutorDAO autorDAO) {
+        this.autorDAO = autorDAO;
+    }
+
+    public ImageDAO getImageDAO() {
+        return imageDAO;
+    }
+
+    public void setImageDAO(ImageDAO imageDAO) {
+        this.imageDAO = imageDAO;
+    }
+
+    public TagDAO getTagDAO() {
+        return tagDAO;
+    }
+
+    public void setTagDAO(TagDAO tagDAO) {
+        this.tagDAO = tagDAO;
+    }
+
+    public LikesDAO getLikesDAO() {
+        return likesDAO;
+    }
+
+    public void setLikesDAO(LikesDAO likesDAO) {
+        this.likesDAO = likesDAO;
+    }
+
+    public ImageTagDAO getImageTagDAO() {
+        return imageTagDAO;
+    }
+
+    public void setImageTagDAO(ImageTagDAO imageTagDAO) {
+        this.imageTagDAO = imageTagDAO;
+    }
+
+    public CommentDAO getCommentDAO() {
+        return commentDAO;
+    }
+
+    public void setCommentDAO(CommentDAO commentDAO) {
+        this.commentDAO = commentDAO;
+    }
+
+    public LikesCommentDAO getLikesCommentDAO() {
+        return likesCommentDAO;
+    }
+
+    public void setLikesCommentDAO(LikesCommentDAO likesCommentDAO) {
+        this.likesCommentDAO = likesCommentDAO;
+    }
+
     public void insertAutor(Autor autor) {
         autorDAO.insert(autor);
     }
@@ -206,4 +262,12 @@ public class MyRepository {
     public Images getImageByID(int id){
         return imageDAO.getImages(id);
     }
+    public List<Comment> getAllComments(int id){
+        return commentDAO.getAllcoments(id);
+    }
+    public int getCountLikes(int id){ return likesDAO.getCountLikes(id);}
+    public int getCountDisLikes(int id){ return likesDAO.getCountDisLikes(id);}
+    public int getCountComentLikes(int id){ return likesCommentDAO.getCountLikes(id);}
+    public int getCountComentDisLikes(int id){ return likesCommentDAO.getCountDisLikes(id);}
+    public Comment getCommentById(int id){return commentDAO.getComment(id);}
 }

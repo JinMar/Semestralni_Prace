@@ -54,4 +54,13 @@ public class CommentDAO {
         }
 
     }
+    @Transactional
+    public List<Comment> getAllcoments(int id){
+        List<Comment> myList = sessionFactory.getCurrentSession().createQuery("from Comment where ID_images ='" + id + "'").list();
+        if (myList.isEmpty()) {
+            return null;
+        } else {
+            return myList;
+        }
+    }
 }

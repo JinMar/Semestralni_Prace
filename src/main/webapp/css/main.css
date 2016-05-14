@@ -214,6 +214,8 @@ header {
 	color: #FFFFFF;
 }
 .clr{
+    width: 900px;
+    height: 1px;
     clear: both;
 }
 footer{
@@ -340,5 +342,34 @@ input[type=submit] {
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin:0px;
+}
+
+.buts{
+
+    min-width:800px;
+    margin-top: 20px;
+    margin-bottom:  20px;
+}
+.comments{
+    width: 900px;
+    float: left;
+}
+.comments ul li{
+    border: solid 1px #222222;
+    list-style: none;
+
+}
+.heg{min-height: 120px}
+.rating{
+    margin-right: 10px;
+    float: right;
+}
+.rtg{
+    width: 150px;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+.rtg ul li{
+    border: solid 1px #FFFFFF;
 }

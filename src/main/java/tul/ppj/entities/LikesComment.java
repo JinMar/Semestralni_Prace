@@ -14,6 +14,9 @@ public class LikesComment {
 
     private Comment comment;
 
+    public LikesComment() {
+    }
+
     public LikesComment(int result, Comment comment) {
         this.result = result;
         this.comment = comment;

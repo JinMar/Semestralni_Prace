@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import tul.ppj.entities.Likes;
 
+import java.util.List;
+
 /**
  * Created by Marek on 12.05.2016.
  */
@@ -40,5 +42,23 @@ public class LikesDAO {
         session.save(likes);
 
 
+    }
+    @Transactional
+    public int getCountLikes(int id){
+        List<Likes> myList = sessionFactory.getCurrentSession().createQuery("from Likes where ID_images ='" + id + " 'and Result=1").list();
+        if (myList.isEmpty()) {
+            return 0;
+        } else {
+            return myList.size();
+        }
+    }
+    @Transactional
+    public int getCountDisLikes(int id){
+        List<Likes> myList = sessionFactory.getCurrentSession().createQuery("from Likes where ID_images ='" + id + "' and Result=-1").list();
+        if (myList.isEmpty()) {
+            return 0;
+        } else {
+            return myList.size();
+        }
     }
 }

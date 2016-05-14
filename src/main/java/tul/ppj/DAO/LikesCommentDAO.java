@@ -5,7 +5,10 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import tul.ppj.entities.Likes;
 import tul.ppj.entities.LikesComment;
+
+import java.util.List;
 
 /**
  * Created by Marek on 12.05.2016.
@@ -41,5 +44,24 @@ public class LikesCommentDAO {
 
 
     }
+    @Transactional
+    public int getCountLikes(int id){
+        List<Likes> myList = sessionFactory.getCurrentSession().createQuery("from LikesComment where ID_Coment ='" + id + " 'and Result=1").list();
+        if (myList.isEmpty()) {
+            return 0;
+        } else {
+            return myList.size();
+        }
+    }
+    @Transactional
+    public int getCountDisLikes(int id){
+        List<Likes> myList = sessionFactory.getCurrentSession().createQuery("from LikesComment where ID_Coment ='" + id + "' and Result=-1").list();
+        if (myList.isEmpty()) {
+            return 0;
+        } else {
+            return myList.size();
+        }
+    }
+
 
 }
