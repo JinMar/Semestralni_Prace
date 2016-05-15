@@ -13,6 +13,9 @@ public class Likes {
     private int result;
     private Images images;
 
+    public Likes() {
+
+    }
     public Likes(int result, Images images) {
         this.result = result;
         this.images = images;

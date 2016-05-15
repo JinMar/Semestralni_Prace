@@ -67,7 +67,7 @@ public class Images {
         return likes;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID")
     public Autor getAutor() { return autor; }
 

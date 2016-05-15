@@ -107,6 +107,8 @@ public class MyRepository {
 
     public void insertLikesComment(LikesComment likesComment){likesCommentDAO.insert(likesComment);}
 
+    public void insertLikes(Likes likes){likesDAO.insert(likes);}
+
     public void insertComment(Comment comment){commentDAO.insert(comment);}
 
     public boolean insertAutor(List<Box> list) {
@@ -262,6 +264,7 @@ public class MyRepository {
     public Images getImageByID(int id){
         return imageDAO.getImages(id);
     }
+    public Autor getAutorById(int id){return autorDAO.getAutor(id);}
     public List<Comment> getAllComments(int id){
         return commentDAO.getAllcoments(id);
     }

@@ -31,9 +31,16 @@
         <header>
             <h2>Vítejte na stránkách semestrální práce z pøedmìtu Pokroèilé programování na platformì Java</h2>
         </header>
-
-
+        <div class="rating">
+        <form:form method="GET" action="/likeimg/id=${current}&next=${next}&prv=${previous}">
+            <input type="submit" value="Like: ${likes} "/>
+        </form:form>
+        <form:form method="GET" action="/dislikeimg/id=${current}&next=${next}&prv=${previous}">
+            <input type="submit" value="Dislike: ${dislikes}"/>
+        </form:form>
+</div>
         <div class="buts">
+            <p>${infodata}</p>
             <div class="left-but">
                 <form:form method="GET" action="/previous/id=${previous}">
                     <input type="submit" value="PØEDCHOZÍ"/>
@@ -70,7 +77,13 @@
                 </li>
                 </c:forEach>
             </ul>
+            <form:form method="POST" modelAttribute="mybox" action="/saveComment/id=${current}&next=${next}&prv=${previous}">
 
+                <form:textarea path="text"/>
+
+
+                <input type="submit" value="GET"/>
+            </form:form>
         </div>
 
     </article>
