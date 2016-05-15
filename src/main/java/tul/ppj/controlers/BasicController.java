@@ -1,5 +1,7 @@
 package tul.ppj.controlers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,7 @@ import tul.ppj.DTO.CommentDTO;
 import tul.ppj.Logic.DTOCreater;
 import tul.ppj.POJO.Box;
 import tul.ppj.POJO.MyBox;
+import tul.ppj.PpjApplication;
 import tul.ppj.Repository.MyRepository;
 import tul.ppj.entities.Comment;
 import tul.ppj.entities.Images;
@@ -25,7 +28,7 @@ import java.util.List;
 public class BasicController {
     @Autowired
     MyRepository repository;
-
+    final static Logger logger = LoggerFactory.getLogger(PpjApplication.class);
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView index() {
         ModelAndView view = new ModelAndView("index");
@@ -75,11 +78,12 @@ public class BasicController {
             view.addObject("mybox",new MyBox());
             view.addObject("likes",imglikes);
             view.addObject("dislikes", imgDislike);
-            System.out.println(image.getName());
+
             view.addObject("infodata",infodata);
             if(dtoCm != null){
                 view.addObject("comemnt", dtoCm);}
         }
+        logger.info("Hotovo");
 
         return view;
     }
