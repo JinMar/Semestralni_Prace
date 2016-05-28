@@ -17,6 +17,8 @@ public class MyWebApplicationInitializer implements WebApplicationInitializer {
     @Override
     public void onStartup(ServletContext container) {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
+
+
         rootContext.register(PpjApplication.class);
         container.addListener(new ContextLoaderListener(rootContext));
         // Vytvoření dispečeru pro spring contextCreate the dispatcher servlet's Spring application context

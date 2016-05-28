@@ -3,6 +3,7 @@ package tul.ppj.controlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,6 +25,7 @@ import java.util.List;
  * Created by Marek on 11.05.2016.
  */
 @Controller
+@Profile("mysql")
 @RequestMapping("/")
 public class BasicController {
     @Autowired

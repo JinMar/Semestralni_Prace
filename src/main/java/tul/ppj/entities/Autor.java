@@ -1,5 +1,7 @@
 package tul.ppj.entities;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
